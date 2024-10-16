@@ -35,16 +35,50 @@ describe('simpleCalculator tests', () => {
         action: Action.Add
       },
     ];
-
     numbersTestCases.forEach(({a, b, action}) => {
       const result = simpleCalculator({a, b, action});
       return expect(result).toBe(a + b);
     })
   });
 
-  // test('should subtract two numbers', () => {
-  //   // Write your test here
-  // });
+  test('should subtract two numbers', () => {
+    const numbersTestCases = [
+      {
+        a: 1,
+        b: 2,
+        action: Action.Subtract
+      },
+      {
+        a: 10,
+        b: 3,
+        action: Action.Subtract
+      },
+      {
+        a: -2,
+        b: 4,
+        action: Action.Subtract
+      },
+      {
+        a: 4,
+        b: 27,
+        action: Action.Subtract
+      },
+      {
+        a: 13,
+        b: 9,
+        action: Action.Subtract
+      },
+      {
+        a: 8,
+        b: 4,
+        action: Action.Subtract
+      },
+    ];
+    numbersTestCases.forEach(({a, b, action}) => {
+      const result = simpleCalculator({a, b, action});
+      return expect(result).toBe(a - b);
+    })
+  });
 
   // test('should multiply two numbers', () => {
   //   // Write your test here
