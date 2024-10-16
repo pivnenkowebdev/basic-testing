@@ -119,9 +119,44 @@ describe('simpleCalculator tests', () => {
     })
   });
 
-  // test('should divide two numbers', () => {
-  //   // Write your test here
-  // });
+  test('should divide two numbers', () => {
+    const numbersTestCases = [
+      {
+        a: 1,
+        b: 2,
+        action: Action.Divide
+      },
+      {
+        a: 10,
+        b: 3,
+        action: Action.Divide
+      },
+      {
+        a: -2,
+        b: 4,
+        action: Action.Divide
+      },
+      {
+        a: 4,
+        b: 27,
+        action: Action.Divide
+      },
+      {
+        a: 13,
+        b: 9,
+        action: Action.Divide
+      },
+      {
+        a: 8,
+        b: 4,
+        action: Action.Divide
+      },
+    ];
+    numbersTestCases.forEach(({a, b, action}) => {
+      const result = simpleCalculator({a, b, action});
+      return expect(result).toBe(a / b);
+    })
+  });
 
   // test('should exponentiate two numbers', () => {
   //   // Write your test here
