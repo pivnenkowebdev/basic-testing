@@ -197,9 +197,44 @@ describe('simpleCalculator tests', () => {
     })
   });
 
-  // test('should return null for invalid action', () => {
-  //   // Write your test here
-  // });
+  test('should return null for invalid action', () => {
+    const numbersTestCases = [
+      {
+        a: 1,
+        b: 2,
+        action: '%'
+      },
+      {
+        a: 10,
+        b: 3,
+        action: '//'
+      },
+      {
+        a: -2,
+        b: 4,
+        action: '++'
+      },
+      {
+        a: 4,
+        b: 27,
+        action: '--'
+      },
+      {
+        a: 13,
+        b: 9,
+        action: '/\\/'
+      },
+      {
+        a: 8,
+        b: 4,
+        action: '#'
+      },
+    ];
+    numbersTestCases.forEach(({a, b, action}) => {
+      const result = simpleCalculator({a, b, action});
+      return expect(result).toBeNull();
+    })
+  });
 
   // test('should return null for invalid arguments', () => {
   //   // Write your test here
