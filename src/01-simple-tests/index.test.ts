@@ -236,7 +236,113 @@ describe('simpleCalculator tests', () => {
     })
   });
 
-  // test('should return null for invalid arguments', () => {
-  //   // Write your test here
-  // });
+  test('should return null for invalid arguments', () => {
+    const numbersTestCases = [
+      {
+        a: '10',
+        b: 5,
+        action: Action.Subtract
+      },
+      {
+        a: 20,
+        b: '7',
+        action: Action.Subtract
+      },
+      {
+        a: null,
+        b: 8,
+        action: Action.Subtract
+      },
+      {
+        a: undefined,
+        b: 2,
+        action: Action.Subtract
+      },
+      {
+        a: true,
+        b: 6,
+        action: Action.Subtract
+      },
+      {
+        a: '5',
+        b: 3,
+        action: Action.Multiply
+      },
+      {
+        a: 2,
+        b: '4',
+        action: Action.Multiply
+      },
+      {
+        a: null,
+        b: 9,
+        action: Action.Multiply
+      },
+      {
+        a: undefined,
+        b: 2,
+        action: Action.Multiply
+      },
+      {
+        a: [],
+        b: 4,
+        action: Action.Multiply
+      },
+      {
+        a: '20',
+        b: 5,
+        action: Action.Divide
+      },
+      {
+        a: 15,
+        b: '3',
+        action: Action.Divide
+      },
+      {
+        a: null,
+        b: 7,
+        action: Action.Divide
+      },
+      {
+        a: undefined,
+        b: 1,
+        action: Action.Divide
+      },
+      {
+        a: {},
+        b: 5,
+        action: Action.Divide
+      },
+      {
+        a: '3',
+        b: 2,
+        action: Action.Exponentiate
+      },
+      {
+        a: 5,
+        b: '3',
+        action: Action.Exponentiate
+      },
+      {
+        a: null,
+        b: 4,
+        action: Action.Exponentiate
+      },
+      {
+        a: undefined,
+        b: 2,
+        action: Action.Exponentiate
+      },
+      {
+        a: Symbol(),
+        b: 3,
+        action: Action.Exponentiate
+      },
+    ];
+    
+    numbersTestCases.forEach(({a, b, action}) => {
+      const result = simpleCalculator({a, b, action});
+      return expect(result).toBeNull();
+    })
+  });
 });
