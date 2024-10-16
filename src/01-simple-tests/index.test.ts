@@ -80,9 +80,44 @@ describe('simpleCalculator tests', () => {
     })
   });
 
-  // test('should multiply two numbers', () => {
-  //   // Write your test here
-  // });
+  test('should multiply two numbers', () => {
+    const numbersTestCases = [
+      {
+        a: 1,
+        b: 2,
+        action: Action.Multiply
+      },
+      {
+        a: 10,
+        b: 3,
+        action: Action.Multiply
+      },
+      {
+        a: -2,
+        b: 4,
+        action: Action.Multiply
+      },
+      {
+        a: 4,
+        b: 27,
+        action: Action.Multiply
+      },
+      {
+        a: 13,
+        b: 9,
+        action: Action.Multiply
+      },
+      {
+        a: 8,
+        b: 4,
+        action: Action.Multiply
+      },
+    ];
+    numbersTestCases.forEach(({a, b, action}) => {
+      const result = simpleCalculator({a, b, action});
+      return expect(result).toBe(a * b);
+    })
+  });
 
   // test('should divide two numbers', () => {
   //   // Write your test here
